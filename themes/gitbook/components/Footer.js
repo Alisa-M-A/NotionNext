@@ -52,7 +52,6 @@ const Footer = ({ siteInfo }) => {
         <i className='fas fa-users' />{' '}
         <span className='px-1 busuanzi_value_site_uv'> </span>{' '}
       </span>
-      <div className='text-xs font-serif'>
 
         {showPoweredBy && (
           <div className='text-xs font-serif'>
