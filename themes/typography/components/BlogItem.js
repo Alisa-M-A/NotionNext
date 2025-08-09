@@ -14,7 +14,11 @@ export const BlogItem = props => {
   const showPageCover = siteConfig('TYPOGRAPHY_POST_COVER_ENABLE', false, CONFIG)
   const showPreview =
     siteConfig('POST_LIST_PREVIEW', false, NOTION_CONFIG) && post.blockMap
-  return (
+ 
+   // 控制是否显示发布时间
+   const showPublishDate = false // 改成 true 就会显示
+
+   return (
     <div key={post.id} className='h-42 mt-6 mb-10'>
       {/* 文章标题 */}
 
@@ -48,6 +52,7 @@ export const BlogItem = props => {
           {/* 文章信息 */}
           <header className='text-md text-[var(--primary-color)] dark:text-gray-300 flex-wrap flex items-center leading-6'>
             <div className='space-x-2'>
+             {showPublishDate && (
               <span className='text-sm'>
                 发布于
                 <SmartLink
@@ -56,6 +61,7 @@ export const BlogItem = props => {
                   {post.date?.start_date || post.createdTime}
                 </SmartLink>
               </span>
+              )}
             </div>
 
             <div className='text-sm'>
