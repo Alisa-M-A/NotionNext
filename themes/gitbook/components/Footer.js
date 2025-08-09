@@ -13,6 +13,9 @@ const Footer = ({ siteInfo }) => {
   const copyrightDate =
     parseInt(since) < currentYear ? since + '-' + currentYear : currentYear
 
+  // 控制是否显示版权信息
+  const showPoweredBy = false // 改成 true 就会显示
+
   return (
     <footer className='z-20 border p-2 rounded-lg bg:white dark:border-black dark:bg-hexo-black-gray justify-center text-center w-full text-sm relative'>
       <SocialButton />
@@ -50,9 +53,6 @@ const Footer = ({ siteInfo }) => {
         <span className='px-1 busuanzi_value_site_uv'> </span>{' '}
       </span>
       <div className='text-xs font-serif'>
-      
-        // 控制是否显示版权信息
-        const showPoweredBy = false; // 改成 true 就会显示
 
         {showPoweredBy && (
           <div className='text-xs font-serif'>
