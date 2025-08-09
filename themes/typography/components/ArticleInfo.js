@@ -11,6 +11,9 @@ import NotionIcon from '@/components/NotionIcon'
  * @returns
  */
 export default function ArticleInfo(props) {
+    // 控制是否显示发布时间
+  const showPublishDate = false // 改成 true 就会显示
+
   const { post } = props
 
   const { locale } = useGlobal()
@@ -26,6 +29,7 @@ export default function ArticleInfo(props) {
         {post?.type !== 'Page' && (
           <header className='text-md text-[var(--primary-color)] dark:text-gray-300 flex-wrap flex items-center leading-6'>
             <div className='space-x-2'>
+             {showPublishDate && (
               <span className='text-sm'>
                 发布于
                 <SmartLink
@@ -34,6 +38,7 @@ export default function ArticleInfo(props) {
                   {post.date?.start_date || post.createdTime}
                 </SmartLink>
               </span>
+              )}
             </div>
 
             <div className='text-sm'>
