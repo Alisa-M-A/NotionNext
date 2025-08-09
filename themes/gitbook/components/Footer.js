@@ -50,7 +50,13 @@ const Footer = ({ siteInfo }) => {
         <span className='px-1 busuanzi_value_site_uv'> </span>{' '}
       </span>
       <div className='text-xs font-serif'>
-        Powered By{' '}
+      
+        // 控制是否显示版权信息
+        const showPoweredBy = false; // 改成 true 就会显示
+
+        {showPoweredBy && (
+          <div className='text-xs font-serif'>
+          Powered By{' '}
         <a
           href='https://github.com/tangly1024/NotionNext'
           className='underline text-gray-500 dark:text-gray-300'>
