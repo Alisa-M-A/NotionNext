@@ -68,5 +68,6 @@ const Footer = ({ siteInfo }) => {
       <h1 className='pt-1 hidden'>{siteConfig('TITLE')}</h1>
     </footer>
   )
+}
 
 export default Footer
