@@ -62,10 +62,11 @@ const Footer = ({ siteInfo }) => {
           NotionNext {siteConfig('VERSION')}
         </a>
       </div>
+    )}
+    
       {/* SEO title */}
       <h1 className='pt-1 hidden'>{siteConfig('TITLE')}</h1>
     </footer>
   )
-}
 
 export default Footer
